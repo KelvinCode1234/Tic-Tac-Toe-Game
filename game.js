@@ -1,6 +1,6 @@
 const gameCells = document.querySelectorAll('.cell');
-const player = document.querySelector('.player');
-const Lima = document.querySelector('.Lima');
+const YOU = document.querySelector('.YOU');
+const LIMA = document.querySelector('.LIMA');
 const restartBtn = document.querySelector('.restartBtn');
 const alertBox = document.querySelector('.alertBox');
 
@@ -8,22 +8,15 @@ let currentPlayer = 'X';
 let nextPlayer = 'O';
 let playerTurn = currentPlayer;
 
-player.textContent = 'player';
-Lima.textContent = 'Lima';
+YOU.textContent = `YOU: ${currentPlayer}`;
+LIMA.textContent = `LIMA: ${nextPlayer}`;
 
 const startGame = () => {
     gameCells.forEach(cell => {
         cell.addEventListener('click', handleClick);
     });
-    // Randomly decide who starts the game
-    if (Math.random() < 0.5) {
-        playerTurn = currentPlayer;
-        showAlert(`Turn for player: ${playerTurn}`);
-    } else {
-        playerTurn = nextPlayer;
-        showAlert(`Turn for player: ${playerTurn}`);
-        setTimeout(makeAIMove, 500); // AI makes a move quickly
-    }
+    playerTurn = currentPlayer;
+    showAlert(`Turn for player: ${playerTurn}`);
 }
 
 const handleClick = (e) => {
@@ -39,11 +32,12 @@ const handleClick = (e) => {
             changePlayerTurn();
             showAlert(`Turn for player: ${playerTurn}`);
             if (playerTurn === nextPlayer) {
-                setTimeout(makeAIMove, 500); // AI makes a move quickly
+                makeAIMove();
             }
         }
     }
 }
+
 
 const makeAIMove = () => {
     const bestMove = getBestMove();
@@ -116,35 +110,33 @@ const showAlert = (msg, isWin) => {
     alertBox.style.display = "block";
     setTimeout(() => {
         alertBox.style.display = "none";
-    }, isWin ? 5000 : 4000);
+    }, isWin ? 5000 : 3000);
 }
 
 const getBestMove = () => {
     let bestMove = -1;
     let bestValue = -Infinity;
-
-    if (Math.random() < 0.3) { // 30% chance of making a random move
-        let availableMoves = [];
+    gameCells.forEach((cell, index) => {
+        if (cell.textContent === '') {
+            cell.textContent = nextPlayer;
+            let moveValue = minimax(false);
+            cell.textContent = '';
+            if (moveValue > bestValue) {
+                bestMove = index;
+                bestValue = moveValue;
+            }
+        }
+    });
+    // Apply the 25% win chance for human
+    if (Math.random() > 0.75) {
+        const emptyCells = [];
         gameCells.forEach((cell, index) => {
             if (cell.textContent === '') {
-                availableMoves.push(index);
+                emptyCells.push(index);
             }
         });
-        bestMove = availableMoves[Math.floor(Math.random() * availableMoves.length)];
-    } else {
-        gameCells.forEach((cell, index) => {
-            if (cell.textContent === '') {
-                cell.textContent = nextPlayer;
-                let moveValue = minimax(false);
-                cell.textContent = '';
-                if (moveValue > bestValue) {
-                    bestMove = index;
-                    bestValue = moveValue;
-                }
-            }
-        });
+        bestMove = emptyCells[Math.floor(Math.random() * emptyCells.length)];
     }
-
     return bestMove;
 }
 

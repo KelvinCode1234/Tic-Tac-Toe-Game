@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 .typed-text {
-    animation: typing 5s;
+    animation: typing 4s;
   }
   
   @keyframes typing {
@@ -17,7 +17,7 @@
   .typed-text h2, .typed-text p, .typed-text h4 {
     white-space: nowrap;
     width: 0;
-    animation: typing 5s;
+    animation: typing 4s;
   }
   
   @keyframes typing {
@@ -59,21 +59,24 @@ h2 {
     font-family: "Poppins", sans-serif;
     font-weight: bold;
     margin-top: 25px;
+    text-align: start;
 }
 
 p {
     font-size: 16px;
+    text-align: start;
     color: #ababab;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold; 
     margin-bottom: 10px;
+    display: flex;
 }
 
 h1 {
-    font-size: 5.2rem;
+    font-size: 4rem;
     color: #ababab;
     margin-bottom: 15rem;
-    margin-left: 10px;
+    margin-left: -30px;
     margin-top: 10px;
 }
 span {
@@ -81,11 +84,11 @@ span {
 }
 
 img {
-    margin-top: 25px;
-    margin-bottom: 40px;
-    margin-left: 0%;
-    height: 100%;
-    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    margin-left: 15% auto;
+    height: 85%;
+    width: 85%;
 }
 .container-1 {
     width: 100vw;
@@ -96,6 +99,8 @@ img {
     max-width: 80rem;
     margin: 0 auto;
     padding: 0.2rem;
+    margin-left: -10px;
+    margin-top: -20px;
 }
 
 .flex-column {
@@ -107,16 +112,16 @@ img {
   justify-content: center;
   align-items: center;
 }
-
-.btn-1{
-    font-size: 40px;
-    background: #ff006a;
-    border: 2px solid black;
-    align-items: center;
-    border-radius: 15px;
-    width: 35%;
-    text-decoration: none;
+.btn {
+  font-size: 20px;
+  background: #ff006a;
+  border: 2px solid black;
+  align-items: center;
+  border-radius: 15px;
+  width: 200px;
+  text-decoration: none;
 }
+
 
 h5 {
   font-size: 25px;
@@ -163,10 +168,14 @@ i:hover {
     content: "•";
     font-size: 1.5rem;
     font-weight: 500;
-    margin-top: 10px;
+    margin-top: -9px;
     margin-right: 5px;
     margin-left: 40px;
     color: #ff006a;
+}
+.container-1{
+  display: flex;
+  margin-top: -20px;
 }
 .container-2 {
     background: #080808;
@@ -180,32 +189,17 @@ i:hover {
 }
 
 h4 {
-    font-size: 25px;
+    font-size: 15px;
     font-weight: 600;
-    text-align: center; 
+    text-align: center;
+    margin-bottom: 20px; 
 }
 
-.btn-2 { 
-    background-color: #ff006a;
-    font-size: 15px;
-    font-weight: 400;
-    color: whitesmoke;
-    margin-left: 10px;
-    border-radius: 10px;
-    width: 50px;
-    text-decoration: none;
-}
-mark h4{
-    color: #ff006a;
-}
-h4{
-    font-size: 14px;
-    padding-bottom: 20px;
-}
 
 .footer {
     font-size: 15px;
     text-align: center;
+    margin-top: 30px;
     margin-bottom: 10px;
 }
 
@@ -218,19 +212,15 @@ h4{
 
 body{
     font-family: "Poppins", sans-serif;
-    font-weight: 100;
     font-style: normal;
     background: black;
     color: antiquewhite;
-    margin-top: -45px;
 }
 
-  img {
-    display: none;
-}
+
 
 h2 {
-  font-size: 25px;
+  font-size: 20px;
   font-family: "Poppins", sans-serif;
   font-weight: bold;
   margin-top: 0 auto;
@@ -240,15 +230,17 @@ p {
   font-size: 13px;
   color: #ababab;
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold; 
+  text-align: start;
+  padding-right: 5px;
   display: flex;
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 35px;
   color: #ababab;
   margin-bottom: 15rem;
   margin-left: 10px;
+  text-align: center;
   margin-top: 20px;
 }
 
@@ -259,54 +251,55 @@ h4 {
   text-align: center; 
 }
 
-.btn-1 {
+.btn {
+  font-size: 20px;
   background: #ff006a;
   border: 2px solid black;
   align-items: center;
   border-radius: 10px;
-  width: 40%;
+  width: 150px;
   text-decoration: none;
-  margin-top: -10px;
+  margin-top: -50px;
 }
 h5 {
-  font-size: 25px;
+  font-size: 30px;
   text-align: center;
 }
+
   .container-2 {
     margin-top: -20px;
-    padding-top: 30px auto;
-    margin-left: 15%;
-    margin-right: 15%;
+    padding: 40px auto;
+    padding-left: -10px;
     margin-bottom: 50px;
-    justify-content: center;
-    border-radius: 10px;
-    width: 70%;
+    border-radius: 7px;
+    width: 87%;
+    margin: -15px auto 0 auto;
 }
 h3 {
   font-size: 25px;
-  font-weight: 600;
+  font-weight: 500;
   font-family: "Poppins", sans-serif;
-  margin-top: 30px;
-  margin-bottom: 10px;
-  margin-left: 40px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   color: whitesmoke;
-  text-align: start;
+  text-align: center;
 }
 
 .dot-before::before {
   content: "•";
   font-size: 1.5rem;
-  font-weight: 500;
-  margin-top: -7px;
+  font-weight: 700;
+  margin-top: -8px;
   margin-right: 7px;
-  margin-left: 40px;
+  margin-left: 5px;
   color: #ff006a;
+  display: flex;
 }
 
 h4 {
   font-size: 13px;
   font-weight: 600;
-  text-align: center; 
+  text-align: center;
 }
 
 i {
